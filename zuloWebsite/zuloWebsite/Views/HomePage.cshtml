@@ -1,0 +1,145 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "layout.cshtml";
+
+}
+
+
+<section class="section-explore">
+
+    @if (Model.MeloChair != null && !string.IsNullOrWhiteSpace(Model.MeloChair.Url))
+    {
+        <img alt="Melo Chair" class="explore-chair" src="@Model.MeloChair.Url">
+    }
+
+    <div class="explore-message">
+        <h2>@Model.ExploreTitle</h2>
+        <p>@Model.ExploreMessage</p>
+        <br>
+        <a class="btn btn-full" href="#">EXPLORE RANGE</a>
+
+    </div>
+
+</section> <!-- Closing Section Explore-->
+
+
+<section class="section-hot">
+
+    <div class="title-section">
+        <h2 class="title">@Model.HotTitle</h2>
+        <div class="icon-hot">
+            <ion-icon name="arrow-back" ></ion-icon>
+            <ion-icon name="arrow-forward"></ion-icon>
+        </div>
+    </div>
+
+    <div class="hot-pictures">
+        <div class="hot-pictures-row">
+
+            @if (Model.CairnTable != null && !string.IsNullOrWhiteSpace(Model.CairnTable.Url))
+            {
+                <img src="@Model.CairnTable.Url" alt="cairn side table">
+            }
+
+            @if (Model.KubrickChair != null && !string.IsNullOrWhiteSpace(Model.KubrickChair.Url))
+            {
+                <img src="@Model.KubrickChair.Url" alt="Kubric Chair">
+            }
+
+            @if (Model.DotWardrobe != null && !string.IsNullOrWhiteSpace(Model.DotWardrobe.Url))
+            {
+                <img src="@Model.DotWardrobe.Url" alt="Dot Wardrobe">
+            }
+
+
+        </div>
+    </div>
+
+</section> <!-- Closing Section Hot -->
+
+
+<section class="section-featured">
+
+    <div class="featured-items">
+
+        <div class="row1">
+            <div class="f-item-text">
+                <h2>@Model.FeaturedTitle</h2>
+                <p>@Model.FeaturesAll</p>
+            </div>
+
+            <div class="f-item">
+                @if (Model.DunnLamp != null && !string.IsNullOrWhiteSpace(Model.DunnLamp.Url))
+                {
+                    <img src="@Model.DunnLamp.Url" alt="Dunn Lamp">
+                }
+            </div>
+        </div>
+
+        <div class="row2">
+            <div class="f-item">
+                @if (Model.MorrisFootstool != null && !string.IsNullOrWhiteSpace(Model.MorrisFootstool.Url))
+                {
+                    <img src="@Model.MorrisFootstool.Url" alt="Morris Footstool">
+                }
+            </div>
+
+            <div class="f-item">
+                @if (Model.BalooPlanter != null && !string.IsNullOrWhiteSpace(Model.BalooPlanter.Url))
+                {
+                    <img src="@Model.BalooPlanter.Url" alt="Baloo Planter">
+                }
+            </div>
+        </div>
+
+    </div>
+
+    <div class="featured-chair">
+        @if (Model.KarmelloChair != null && !string.IsNullOrWhiteSpace(Model.KarmelloChair.Url))
+        {
+            <img src="@Model.KarmelloChair.Url" alt="Karmello Side Chair">
+        }
+    </div>
+
+</section> <!-- Closing Section Featured -->
+
+
+<section class="section-different">
+
+    <div class="title-different">
+        <h2 class="title">@Model.TitleDifferent</h2>
+    </div>
+
+    <div class="different-message">
+
+        @Model.DifferentMessage1
+
+    </div>
+
+</section> <!-- Closing Section Different -->
+
+
+<section class="section-contact">
+
+    <div class="contact-message">
+
+        <h2>@Model.ContactTitle</h2>
+        @Model.ContactMessage
+        <p>
+            <input type="text" name="email" placeholder="Enter your email address">
+        </p>
+        <button type="submit" value="Submit" class="btn btn-full btn-end">Subscribe</button>
+
+    </div>
+
+    <div class="contact-image">
+        @if (Model.LivingRoom != null && !string.IsNullOrWhiteSpace(Model.LivingRoom.Url))
+        {
+            <img src="@Model.LivingRoom.Url">
+        }
+    </div>
+
+</section> <!-- Closing Section Contact -->
+
+
